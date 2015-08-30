@@ -20,7 +20,9 @@ int main(int argc, char **argv)
 		std::cout << " SubtitleCorrector.exe [input filename] [output filename] [time1] [correction1] [time2] [correction2] ...\n";
 		std::cout << "Example:\n";
 		std::cout << " SubtitleCorrector.exe sub.srt sub2.srt 00:00:03,990 5000 00:40:14,630 -7000\n";
-		std::cout << "(2000 ms is added to every line in sub.srt, result will be in sub2.srt)\n";
+		std::cout << "(5000 ms is added to every line in sub.srt before the first point,\n";
+		std::cout << "-7000 after the last, and in between the times are linearly interpolated,\n";
+		std::cout << "the result will be in sub2.srt)\n";
 		return 0;
 	}
 	fileIn = std::string{ argv[1] };
